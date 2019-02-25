@@ -2,11 +2,22 @@ import React, { Component } from 'react'
 import Product from './product';
 
 export default class ProductList extends Component {
+    state = {
+        products : []
+    }
   render() {
     return (
-      <div>
-        <Product/>
-      </div>
+      <React.Fragment>
+          <div className="py-5">
+            <div className="container">
+            <div className="row">
+
+            </div>
+            </div>
+          </div>
+
+      </React.Fragment>
+        // <Product/>
     )
   }
 }
