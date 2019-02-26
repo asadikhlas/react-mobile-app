@@ -23,15 +23,14 @@ export default class Product extends Component {
                 console.log("added to cart");
               }}
             >
-            {inCart ? (
-              <p className="text-capitalize mb-0" disabled>
-                in inCart
-              </p>
-            ) : (
-              <i className="fas fa-cart-plus" />
-            )}
+              {inCart ? (
+                <p className="text-capitalize mb-0" disabled>
+                  in inCart
+                </p>
+              ) : (
+                <i className="fas fa-cart-plus" />
+              )}
             </button>
-            
           </div>
         </div>
       </ProductWrapper>
