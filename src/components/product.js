@@ -11,11 +11,12 @@ export default class Product extends Component {
         <div className="card">
           <div
             className="img-container p-5"
-            onClick={console.log("you clicked me")}
+            onClick={()=>console.log("you clicked me")}
           >
             <Link to="/details">
               <img src={img} alt="product" className="card-img-top" />
             </Link>
+            <button className="card-btn" disabled={inCart ? true : false}/>
           </div>
         </div>
       </ProductWrapper>
