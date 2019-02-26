@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {storeProducts,detailProduct} from './data';
+import { storeProducts, detailProduct } from "./data";
 
 const ProductContext = React.createContext();
 //Provider
@@ -7,22 +7,23 @@ const ProductContext = React.createContext();
 class ProductProvider extends Component {
   state = {
     products: storeProducts,
-    detailProduct:detailProduct
-  }
+    detailProduct: detailProduct
+  };
   handleDetails = () => {
-    console.log('hello from details')
-  }
+    console.log("hello from details");
+  };
   addToCart = () => {
-    console.log('hello from add to cart')
-  }
+    console.log("hello from add to cart");
+  };
   render() {
     return (
-      <ProductContext.Provider value={{
-        ...this.state,
-        handleDetails: this.handleDetails,
-        addToCart: this.addToCart
-
-      }}>
+      <ProductContext.Provider
+        value={{
+          ...this.state,
+          handleDetails: this.handleDetails,
+          addToCart: this.addToCart
+        }}
+      >
         {this.props.children}
       </ProductContext.Provider>
     );
