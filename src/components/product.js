@@ -48,12 +48,12 @@ export default class Product extends Component {
 }
 
 Product.propTypes = {
-  product: propTypes.shape({
-    id: propTypes.number,
-    img: propTypes.string,
-    title: propTypes.string,
-    price: propTypes.number,
-    inCart: propTypes.bool
+  product: PropTypes.shape({
+    id: PropTypes.number,
+    img: PropTypes.string,
+    title: PropTypes.string,
+    price: PropTypes.number,
+    inCart: PropTypes.bool
   }).isRequired
 };
 
