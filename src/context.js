@@ -9,19 +9,19 @@ class ProductProvider extends Component {
     products: storeProducts,
     detailProduct: detailProduct
   };
-  componentDidMount(){
+  componentDidMount() {
     this.setProducts();
   }
   setProducts = () => {
     let tempProducts = [];
     storeProducts.forEach(item => {
-      const singleItem = {...item};
+      const singleItem = { ...item };
       tempProducts = [...tempProducts, singleItem];
-    })
-    this.setState(()=>{
-      return {products: tempProducts}
-    })
-  }
+    });
+    this.setState(() => {
+      return { products: tempProducts };
+    });
+  };
 
   handleDetails = () => {
     console.log("hello from details");
@@ -29,7 +29,6 @@ class ProductProvider extends Component {
   addToCart = () => {
     console.log("hello from add to cart");
   };
-
 
   render() {
     return (
