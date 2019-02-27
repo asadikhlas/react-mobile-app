@@ -75,4 +75,16 @@ const ProductWrapper = styled.div`
 .img-container:hover .card-img-top{
   trasnform: scale(1.2);
 }
+.card-btn{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.2rem 0.4rem;
+  background: var(--lightBlue);
+  border: none;
+  color: var(--mainWhite);
+  font-size: 1.4rem;
+  border-radius: 0.5rem 0 0 0;
+  transfrom: translate(100%, 100%);
+}
 `;
