@@ -59,6 +59,10 @@ const ProductWrapper = styled.div`
 &:hover{
   .card{
     border: 0.4rem solid rgba(0,0,0,0.2);
+    box-shaddow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+  }
+  .card-footer{
+    background: rgba(247, 247, 247);
   }
 }
 `;
