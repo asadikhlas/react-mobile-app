@@ -65,4 +65,14 @@ const ProductWrapper = styled.div`
     background: rgba(247, 247, 247);
   }
 }
+.img-container{
+  position: relative;
+  overflow: hidden;
+}
+.card-img-top {
+  transition: all 1s linear;
+}
+.img-container:hover .card-img-top{
+  trasnform: scale(1.2);
+}
 `;
