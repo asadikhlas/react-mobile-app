@@ -6,7 +6,7 @@ const ProductContext = React.createContext();
 //Consumer
 class ProductProvider extends Component {
   state = {
-    products: storeProducts,
+    products: [],
     detailProduct: detailProduct
   };
   componentDidMount() {
