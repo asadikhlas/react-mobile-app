@@ -1,11 +1,35 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import styled from "styled-components";
+import { ProductConsumer } from "../context";
+import { ButtonContainer } from "./button";
+import { Link } from "react-router-dom";
 
 export default class Modal extends Component {
   render() {
     return (
-      <div>
-        <h1>hello from Modal</h1>
-      </div>
-    )
+      <ProductConsumer>
+        {value => {
+          const { modalOpen, closeModal } = value;
+          const { img, title, price } = value.modalProduct;
+          if (!modalOpen) {
+            return null;
+          } else {
+            return (
+              <ModalContainer>
+                <div className="container">
+                  <div className="row">
+                    <div className="col-8 mx-auto col-md-6 col-lg-4 text-center text-capitalize">
+                      <h5>item added into car</h5>
+                    </div>
+                  </div>
+                </div>
+              </ModalContainer>
+            );
+          }
+        }}
+      </ProductConsumer>
+    );
   }
 }
+
+const ModalContainer = styled.div``;
