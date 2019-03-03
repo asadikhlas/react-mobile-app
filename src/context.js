@@ -7,7 +7,7 @@ const ProductContext = React.createContext();
 class ProductProvider extends Component {
   state = {
     products: [],
-    detailProduct: detailProduct,
+    detailProduct,
     cart: [],
     modalOpen: false,
     modalProduct: detailProduct,
@@ -73,23 +73,34 @@ class ProductProvider extends Component {
   decrement = id => {
     console.log("this is decrement method");
   };
-  removeItem = id => {
+   // Removes an item from the cart based on id passed
+   removeItem = id => {
     let tempProducts = [...this.state.products];
-    let tempCart = [this.state.cart];
-    tempCart= tempCart.filter(item => item.id !== id);
-    const index= tempProducts.indexOf(this.getItem(id));
-    let removedProduct =tempProducts[index]
-    removedProduct.inCart= false;
-    removedProduct.count= 0;
-    removedProduct.total= 0;
-    this.setProducts(()=>{
-      return{
-        cart:[...tempCart],
-        products:[...tempProducts]
+    let tempCart = [...this.state.cart];
+
+    tempCart = tempCart.filter(item => {
+      return item.id !== id;
+    });
+
+    const index = tempProducts.indexOf(this.getItem(id));
+    let removedProduct = tempProducts[index];
+
+    // Resets the product values
+    removedProduct.inCart = false;
+    removedProduct.count = 0;
+    removedProduct.total = 0;
+
+    this.setState(
+      () => {
+        return {
+          cart: [...tempCart],
+          producs: [...tempProducts]
+        };
+      },
+      () => {
+        this.addTotals();
       }
-    },()=>{
-      this.addTotals();
-    })
+    );
   };
   clearCart = () => {
     this.setState(
