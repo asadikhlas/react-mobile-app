@@ -73,8 +73,8 @@ class ProductProvider extends Component {
   decrement = id => {
     console.log("this is decrement method");
   };
-   // Removes an item from the cart based on id passed
-   removeItem = id => {
+  // Removes an item from the cart based on id passed
+  removeItem = id => {
     let tempProducts = [...this.state.products];
     let tempCart = [...this.state.cart];
 
