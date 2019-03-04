@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { storeProducts, detailProduct } from "./data";
-import { promisify } from "util";
 
 const ProductContext = React.createContext();
 //Provider
