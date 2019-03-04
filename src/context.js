@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { storeProducts, detailProduct } from "./data";
+import { promisify } from "util";
 
 const ProductContext = React.createContext();
 //Provider
@@ -68,7 +69,13 @@ class ProductProvider extends Component {
     });
   };
   increment = id => {
-    console.log("this is increment method");
+    let tempCart = [...this.state.cart];
+    const selectedProduct = tempCart.find(item=>item.id === id)
+    const index = tempCart.indexOf(selectedProduct);
+    const product = tempCart[index]
+    product.count =product.count + 1;
+    product.total = product.count * product.price;
+
   };
   decrement = id => {
     console.log("this is decrement method");
