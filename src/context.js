@@ -101,7 +101,7 @@ class ProductProvider extends Component {
       () => {
         return {
           cart: [...tempCart],
-          producs: [...tempProducts]
+          products: [...tempProducts]
         };
       },
       () => {
